@@ -1,2 +1,4 @@
-Copy shaded client here and name it client.jar, run build.sh (adjust script if
-for other platforms, and JAVA_HOME as well, heavy WIP).
+* Copy shaded client here and name it client.jar
+* Symlink jdk8 to jdk here
+* Symlink jdk8 sources to jdk-src here
+* Run build.sh and pray

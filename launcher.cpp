@@ -21,7 +21,7 @@ extern "C" {
 	extern const uint8_t SYMBOL(end)[];
 
 	EXPORT const uint8_t*
-		bootJar(unsigned* size)
+		bootJar(size_t* size)
 		{
 			*size = SYMBOL(end) - SYMBOL(start);
 			return SYMBOL(start);
@@ -43,6 +43,7 @@ main(int ac, const char** av)
 	vmArgs.options = options;
 
 	options[0].optionString = const_cast<char*>("-Xbootclasspath:[bootJar]");
+	options[2].optionString = const_cast<char*>("-verbose:jni");
 
 	JavaVM* vm;
 	void* env;
